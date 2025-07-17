@@ -22,6 +22,7 @@ export default function AddFunds() {
         });
 
         const session = res.data;
+        console.log(session.id);
 
         const result = await stripe.redirectToCheckout({
             sessionId: session.id

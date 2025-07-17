@@ -16,10 +16,17 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
+    balance: {
+        type: Number,
+        default: 0
+    },
     AkashWalletId: { type: mongoose.Schema.Types.ObjectId, ref: 'AkashWallet' },
     FluxWalletId: { type: mongoose.Schema.Types.ObjectId, ref: 'FluxWallet' },
-
-});
+},
+    {
+        timestamps: true, // Adds createdAt and updatedAt
+    }
+);
 
 
 export const User = mongoose.model("User", userSchema);
