@@ -13,6 +13,4 @@ userRouter.route("/getBalance").post(jwtCheck, getUserBalance);
 
 
 
-
-
 export { userRouter };

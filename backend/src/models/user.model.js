@@ -16,6 +16,9 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
+    prviateKey: {
+        type: String,
+    },
     balance: {
         type: Number,
         default: 0

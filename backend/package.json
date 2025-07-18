@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@cosmjs/proto-signing": "^0.34.0",
+    "@cosmjs/stargate": "^0.34.0",
     "bitcoinjs-lib": "^6.1.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
@@ -20,6 +21,7 @@
     "express-oauth2-jwt-bearer": "^1.6.1",
     "mongoose": "^8.16.4",
     "nodemon": "^3.1.10",
+    "osmojs": "^16.15.0",
     "stripe": "^18.3.0",
     "tiny-secp256k1": "^2.2.4"
   }
