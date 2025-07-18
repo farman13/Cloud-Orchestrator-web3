@@ -23,7 +23,7 @@ export const DeployOptions = () => {
         const sub = user.sub;
         const token = await getAccessTokenSilently();
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/user/deploy-akash", { sub, formData },
+            const res = await axios.post("http://localhost:8000/api/v1/deploy/deploy-akash", { sub, formData },
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
