@@ -1,13 +1,13 @@
-import { DirectSecp256k1Wallet } from "@cosmjs/proto-signing";
+import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { SigningStargateClient } from "@cosmjs/stargate";
 
-const RPC_ENDPOINT = "https://rpc.akash.forbole.com";
+const RPC_ENDPOINT = "https://rpc.akashnet.net/";
 const AKASH_DENOM = "uakt"; // 1 AKT = 1,000,000 uakt
 
 const MNEMONIC = process.env.MASTER_ATK_MNEMONIC;
 
 // amount to send 
-const AMOUNT = "5000000"; // 1 AKT
+const AMOUNT = "5000000"; // 5 AKT
 
 const FEE = {
     amount: [
@@ -22,12 +22,13 @@ const FEE = {
 
 export const sendAkashTokenToUser = async (recipient) => {
 
-    const wallet = await DirectSecp256k1Wallet.fromMnemonic(MNEMONIC, { prefix: "akash" });
+    const wallet = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, { prefix: "akash" });
     const [account] = await wallet.getAccounts();
 
     console.log(`Sending from: ${account.address}`);
 
     const client = await SigningStargateClient.connectWithSigner(RPC_ENDPOINT, wallet);
+    console.log("Client", client);
 
     const result = await client.sendTokens(
         account.address,     // from address

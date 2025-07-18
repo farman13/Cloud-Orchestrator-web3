@@ -1,3 +1,4 @@
+/*********** Useful when we deploy our backend **********/
 import Stripe from "stripe";
 import dotenv from "dotenv";
 dotenv.config();

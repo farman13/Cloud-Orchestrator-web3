@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { jwtCheck } from "../middlewares/auth.middleware.js";
-import { deployToAkash, deployToFlux } from "../controllers/user.controller.js";
+import { deployToAkash, deployToFlux } from "../controllers/deploy.controller.js";
+
 
 const deployRouter = Router();
 
